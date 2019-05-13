@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: docker/app/Dockerfile
+    networks:
+      - react-backend
     volumes:
       - ./app:/usr/src/app
       - ./app/node_modules:/usr/src/app/node_modules
@@ -12,3 +14,36 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+  api:
+    build: docker/api
+    container_name: react-film-api
+    depends_on:
+      - db
+    ports:
+      - "3001:80"
+    volumes:
+      - ./api:/var/www/html
+      - ./docker/local/api/apache:/var/log/apache2
+  db:
+    image: mysql
+    container_name: react-film-db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: react
+    networks:
+      - react-backend
+    volumes:
+      - ./docker/local/mysql:/var/lib/mysql
+  adminer:
+    image: adminer
+    container_name: react-film-adminer
+    networks:
+      - react-backend
+    ports:
+      - "3002:8080"
+    restart: always
+networks:
+  react-backend:
+    driver: bridge

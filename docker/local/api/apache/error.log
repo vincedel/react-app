@@ -1,0 +1,18 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon May 13 13:54:59.292095 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.18 configured -- resuming normal operations
+[Mon May 13 13:54:59.295193 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon May 13 14:00:48.277815 2019] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon May 13 14:00:50.774089 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.18 configured -- resuming normal operations
+[Mon May 13 14:00:50.775086 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon May 13 14:00:50.967493 2019] [autoindex:error] [pid 17] [client 172.18.0.1:52588] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
+[Mon May 13 14:02:02.361208 2019] [autoindex:error] [pid 19] [client 172.18.0.1:52654] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
+[Mon May 13 14:02:05.487550 2019] [autoindex:error] [pid 19] [client 172.18.0.1:52654] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive
+[Mon May 13 14:04:31.045466 2019] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon May 13 14:04:33.552697 2019] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.18 configured -- resuming normal operations
+[Mon May 13 14:04:33.553396 2019] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2019-05-13T12:06:47+00:00 [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET /"" at /var/www/html/vendor/symfony/http-kernel/EventListener/RouterListener.php line 139
+2019-05-13T12:06:54+00:00 [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET /"" at /var/www/html/vendor/symfony/http-kernel/EventListener/RouterListener.php line 139
+2019-05-13T12:10:48+00:00 [info] Matched route "api_entrypoint".
+2019-05-13T12:10:49+00:00 [info] Populated the TokenStorage with an anonymous Token.
