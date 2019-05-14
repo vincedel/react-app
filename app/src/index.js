@@ -5,6 +5,8 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import "./assets/scss/material-kit-react.scss";
 
+import ProtectedRoute from './security/ProtectedRoute'
+
 // pages for this product
 import Components from "./views/Components/Components.jsx";
 import LandingPage from "./views/LandingPage/LandingPage.jsx";
@@ -17,8 +19,8 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/landing-page" component={LandingPage} />
-      <Route path="/profile-page" component={ProfilePage} />
-      <Route path="/login-page" component={LoginPage} />
+      <ProtectedRoute path="/profile-page" component={ProfilePage} />
+      <Route path="/login" component={LoginPage} />
       <Route path="/" component={Components} />
     </Switch>
   </Router>,
