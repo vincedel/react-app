@@ -43,6 +43,10 @@ class UserOutput
      * @var string
      */
     private $city;
+    /**
+     * @var string
+     */
+    private $interestedBy;
 
     /**
      * @return string
@@ -192,6 +196,25 @@ class UserOutput
     public function setCity(string $city): UserOutput
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInterestedBy(): string
+    {
+        return $this->interestedBy;
+    }
+
+    /**
+     * @param string $interestedBy
+     * @return UserOutput
+     */
+    public function setInterestedBy(string $interestedBy): UserOutput
+    {
+        $this->interestedBy = $interestedBy;
 
         return $this;
     }

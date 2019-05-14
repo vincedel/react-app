@@ -34,6 +34,7 @@ class UserSignUpInputToUser implements DataTransformerInterface
             ->setAvatar($object->getAvatar())
             ->setGender($object->getGender())
             ->setCity($object->getCity())
+            ->setInterestedBy($object->getInterestedBy())
             ->setBirthdate(new \DateTime($object->getBirthdate()));
 
         return $boUser;

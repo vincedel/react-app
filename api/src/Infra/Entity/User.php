@@ -112,6 +112,12 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $city;
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", columnDefinition="ENUM('male', 'female', 'all')")
+     */
+    private $interestedBy;
 
     /**
      * @return string
@@ -280,6 +286,25 @@ class User implements UserInterface
     public function setCity(string $city): User
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInterestedBy(): string
+    {
+        return $this->interestedBy;
+    }
+
+    /**
+     * @param string $interestedBy
+     * @return User
+     */
+    public function setInterestedBy(string $interestedBy): User
+    {
+        $this->interestedBy = $interestedBy;
 
         return $this;
     }

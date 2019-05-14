@@ -33,6 +33,7 @@ class UserToUserLoginOuput implements DataTransformerInterface
             ->setAvatar($object->getAvatar())
             ->setGender($object->getGender())
             ->setCity($object->getCity())
+            ->setInterestedBy($object->getInterestedBy())
             ->setToken(Crypto::encryptWithPassword($object->getId(), 'react'));
     }
 

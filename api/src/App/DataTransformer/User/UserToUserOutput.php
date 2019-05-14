@@ -13,7 +13,7 @@ use ApiPlatform\Core\DataTransformer\DataTransformerInterface;
 use Domain\User\UserOutput;
 use Infra\Entity\User;
 
-class UserToUserOuput implements DataTransformerInterface
+class UserToUserOutput implements DataTransformerInterface
 {
     /**
      * @param User $object
@@ -30,6 +30,7 @@ class UserToUserOuput implements DataTransformerInterface
             ->setEmail($object->getEmail())
             ->setGender($object->getGender())
             ->setCity($object->getCity())
+            ->setInterestedBy($object->getInterestedBy())
             ->setBirthdate($object->getBirthdate()->format(\DateTime::ISO8601))
             ->setAvatar($object->getAvatar());
     }

@@ -43,6 +43,10 @@ class UserSignUpInput
      * @var string
      */
     private $city;
+    /**
+     * @var string
+     */
+    private $interestedBy;
 
     /**
      * @return string
@@ -192,6 +196,25 @@ class UserSignUpInput
     public function setCity(string $city): UserSignUpInput
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInterestedBy(): string
+    {
+        return $this->interestedBy;
+    }
+
+    /**
+     * @param string $interestedBy
+     * @return UserSignUpInput
+     */
+    public function setInterestedBy(string $interestedBy): UserSignUpInput
+    {
+        $this->interestedBy = $interestedBy;
 
         return $this;
     }
