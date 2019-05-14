@@ -3,7 +3,7 @@ import RequestAPI from './RequestAPI'
 export default (state = [], action) => {
     switch (action.type) {
         case 'LOGIN':
-            return RequestAPI('/movies', 'GET')
+            return RequestAPI('/login', 'POST', {email: action.email, password: action.password})
             .then(json => {
                 if (json.status === 201) {
                     json.json().then(user => {
