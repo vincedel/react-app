@@ -6,6 +6,7 @@ import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
+import Lock from "@material-ui/icons/Lock";
 // core components
 import Header from "./../../components/Header/Header.jsx";
 import HeaderLinks from "./../../components/Header/HeaderLinks.jsx";
@@ -66,37 +67,8 @@ class LoginPage extends React.Component {
                   <form className={classes.form}>
                     <CardHeader color="primary" className={classes.cardHeader}>
                       <h4>Login</h4>
-                      <div className={classes.socialLine}>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-twitter"} />
-                        </Button>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-facebook"} />
-                        </Button>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={"fab fa-google-plus-g"} />
-                        </Button>
-                      </div>
                     </CardHeader>
-                    <p className={classes.divider}>Or Be Classical</p>
+                    <p className={classes.divider}>CINER la putain dta mere</p>
                     <CardBody>
                       <CustomInput
                         labelText="First Name..."
@@ -138,9 +110,8 @@ class LoginPage extends React.Component {
                           type: "password",
                           endAdornment: (
                             <InputAdornment position="end">
-                              <Icon className={classes.inputIconsColor}>
-                                lock_outline
-                              </Icon>
+                              <Lock className={classes.inputIconsColor}>
+                              </Lock>
                             </InputAdornment>
                           )
                         }}
@@ -148,15 +119,19 @@ class LoginPage extends React.Component {
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                       <Button simple color="primary" size="lg">
-                        Get started
+                        Connexion
                       </Button>
                     </CardFooter>
+                      <CardFooter className={classes.cardFooter}>
+                          <Button simple color="primary" size="lg">
+                              Inscription
+                          </Button>
+                      </CardFooter>
                   </form>
                 </Card>
               </GridItem>
             </GridContainer>
           </div>
-          <Footer whiteFont />
         </div>
       </div>
     );
