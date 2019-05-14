@@ -21,6 +21,8 @@ services:
       - db
     ports:
       - "3001:80"
+    networks:
+      - react-backend
     volumes:
       - ./api:/var/www/html
       - ./docker/local/api/apache:/var/log/apache2
