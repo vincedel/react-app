@@ -59,12 +59,12 @@ class LoginPage extends React.Component {
                 <Card className={classes[this.state.cardAnimaton]}>
                   <form className={classes.form}>
                     <CardHeader color="primary" className={classes.cardHeader}>
-                      <h4>Login</h4>
+                        <img src="http://placehold.it/250x150/" alt="CINER"/>
                     </CardHeader>
-                    <p className={classes.divider}>CINER la putain dta mere</p>
+                    <p className={classes.divider}>Login</p>
                     <CardBody>
                       <CustomInput
-                        labelText="First Name..."
+                        labelText="Lucien"
                         id="first"
                         formControlProps={{
                           fullWidth: true
@@ -79,7 +79,7 @@ class LoginPage extends React.Component {
                         }}
                       />
                       <CustomInput
-                        labelText="Email..."
+                        labelText="lulu_garibaldi@aol.fr"
                         id="email"
                         formControlProps={{
                           fullWidth: true
@@ -114,12 +114,10 @@ class LoginPage extends React.Component {
                       <Button simple color="primary" size="lg">
                         Connexion
                       </Button>
+                        <Button simple color="primary" size="lg">
+                            Inscription
+                        </Button>
                     </CardFooter>
-                      <CardFooter className={classes.cardFooter}>
-                          <Button simple color="primary" size="lg">
-                              Inscription
-                          </Button>
-                      </CardFooter>
                   </form>
                 </Card>
               </GridItem>
