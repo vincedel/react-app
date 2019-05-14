@@ -103,7 +103,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(type="string", columnDefinition="enum('male', 'female', 'neutral')")
+     * @ORM\Column(type="string", columnDefinition="ENUM('male', 'female', 'neutral')")
      */
     private $gender;
     /**

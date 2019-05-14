@@ -1,0 +1,8 @@
+Infra\Entity\Movie:
+  movie_{1..100}:
+    id: '<current()>'
+    title: '<sentence(6, true)>'
+    types: '<words(3)>'
+    year: '<year("now")>'
+    description: '<text(200)>'
+    poster: '<imageUrl(1200, 1600)>'

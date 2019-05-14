@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use ApiPlatform\Core\Bridge\Symfony\Validator\Exception\ValidationException;
 use ApiPlatform\Core\Exception\FilterValidationException;
 use ApiPlatform\Core\Exception\InvalidArgumentException;
 use Infra\Entity\User;
@@ -35,7 +36,7 @@ class UserController
                 '',
                 $user->getUsername()
             );
-            return new ConstraintViolationList([$violation]);
+            throw new ValidationException(new ConstraintViolationList([$violation]));
         }
 
         if ($databaseUser->getPassword() !== $user->getPassword()) {
@@ -47,7 +48,7 @@ class UserController
                 '',
                 $user->getPassword()
                 );
-            return new ConstraintViolationList([$violation]);
+            throw new ValidationException(new ConstraintViolationList([$violation]));
         }
 
         return $databaseUser;
