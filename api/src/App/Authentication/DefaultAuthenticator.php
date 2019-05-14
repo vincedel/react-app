@@ -86,7 +86,6 @@ class DefaultAuthenticator extends AbstractGuardAuthenticator implements Authent
 
     public function getUserFromToken($apiKey)
     {
-        die(Crypto::decryptWithPassword($apiKey, 'react'));
         return $this->repository->find(Crypto::decryptWithPassword($apiKey, 'react'));
     }
 

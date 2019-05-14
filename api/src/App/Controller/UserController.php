@@ -26,6 +26,18 @@ class UserController
 
         $databaseUser = $repository->findByUsername($user->getUsername());
 
+        if (is_null($databaseUser)) {
+            $violation = new ConstraintViolation(
+                'Aucun compte n\'est liè à cet email',
+                'Aucun compte n\'est liè à cet email',
+                ['email'],
+                '',
+                '',
+                $user->getUsername()
+            );
+            return new ConstraintViolationList([$violation]);
+        }
+
         if ($databaseUser->getPassword() !== $user->getPassword()) {
             $violation = new ConstraintViolation(
                 'Votre mot de passe est incorrect',
@@ -33,7 +45,7 @@ class UserController
                 ['password'],
                 '',
                 '',
-                $databaseUser->getPassword()
+                $user->getPassword()
                 );
             return new ConstraintViolationList([$violation]);
         }
