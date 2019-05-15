@@ -26,6 +26,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      },
  *     collectionOperations={
  *      "get" = {
+ *          "controller"="App\Controller\UserController::getLinkedUsers",
  *          "output"="Domain\User\UserOutput"
  *      },
  *      "signUp"={
@@ -37,7 +38,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      "login"={
  *          "method"="POST",
  *          "path"="/login",
- *          "controller"="\App\Controller\UserController::login",
+ *          "controller"="App\Controller\UserController::login",
  *          "input"="Domain\User\UserLoginInput",
  *          "output"="Domain\User\UserLoginOutput"
  *      }

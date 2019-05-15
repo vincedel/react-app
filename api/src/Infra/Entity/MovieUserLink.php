@@ -8,6 +8,7 @@
 
 namespace Infra\Entity;
 
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,6 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
  *      "get_status"={
  *          "method"="GET",
  *          "path"="/movies/{id}/status",
+ *          "output"="Domain\MovieUserLink\StatusOutput",
  *          "controller"="App\Controller\MovieUserLinkController::getStatus",
  *          "swagger_context"={
  *              "parameters"={
@@ -40,6 +42,7 @@ use Doctrine\ORM\Mapping as ORM;
  *          "method"="POST",
  *          "path"="/movies/{id}/status",
  *          "input"="Domain\MovieUserLink\StatusInput",
+ *          "output"="Domain\MovieUserLink\StatusOutput",
  *          "controller"="App\Controller\MovieUserLinkController::likeMovie",
  *          "swagger_context"={
  *              "parameters"={
@@ -49,13 +52,24 @@ use Doctrine\ORM\Mapping as ORM;
  *                      "type"="string",
  *                      "required"=true,
  *                      "description"="Movie id"
- *                  },
+ *                  }
+ *              }
+ *          }
+ *      },
+ *     "update_like_movie"={
+ *          "method"="PUT",
+ *          "path"="/movies/{id}/status",
+ *          "input"="Domain\MovieUserLink\StatusInput",
+ *          "output"="Domain\MovieUserLink\StatusOutput",
+ *          "controller"="App\Controller\MovieUserLinkController::likeMovie",
+ *          "swagger_context"={
+ *              "parameters"={
  *                  {
- *                      "in": "body",
- *                      "name":"body",
- *                      "type":"object",
- *                      "description": "Status like",
- *                      "example": {"liked": true}
+ *                      "in"="path",
+ *                      "name"="id",
+ *                      "type"="string",
+ *                      "required"=true,
+ *                      "description"="Movie id"
  *                  }
  *              }
  *          }
@@ -80,9 +94,9 @@ class MovieUserLink
      */
     private $user;
     /**
-     * @var bool
+     * @var int
      *
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="smallint")
      */
     private $liked;
 
@@ -125,18 +139,18 @@ class MovieUserLink
     }
 
     /**
-     * @return boolean
+     * @return int
      */
-    public function isLiked(): bool
+    public function isLiked(): int
     {
         return $this->liked;
     }
 
     /**
-     * @param boolean $liked
+     * @param int $liked
      * @return MovieUserLink
      */
-    public function setLiked(bool $liked): MovieUserLink
+    public function setLiked(int $liked): MovieUserLink
     {
         $this->liked = $liked;
 

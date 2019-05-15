@@ -10,11 +10,10 @@ namespace App\Controller;
 
 
 use ApiPlatform\Core\Bridge\Symfony\Validator\Exception\ValidationException;
-use ApiPlatform\Core\Exception\FilterValidationException;
-use ApiPlatform\Core\Exception\InvalidArgumentException;
 use Infra\Entity\User;
 use Infra\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
@@ -52,5 +51,10 @@ class UserController
         }
 
         return $databaseUser;
+    }
+
+    public function getLinkedUsers(UserRepository $repository, UserInterface $user)
+    {
+        return $repository->findLinkedUsers($user);
     }
 }

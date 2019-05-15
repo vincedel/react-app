@@ -1,0 +1,23 @@
+Infra\Entity\User:
+  user_0:
+    id: '1ad5b640-76df-11e9-be30-0242ac130003'
+    fname: 'Valentin'
+    name: 'Lacour'
+    email: 'toto@toto.com'
+    password: 'azertyuiop'
+    birthdate: '<dateTime("2000-01-01", "Europe/Paris")>'
+    avatar: '<imageUrl(300, 300)>'
+    gender: 'male'
+    city: 'Amiens'
+    interestedBy: 'female'
+  user_{1..100}:
+    id: '<uuid()>'
+    fname: '<firstName(null|"male"|"female")>'
+    name: '<lastName()>'
+    email: '<email()>'
+    password: '<password()>'
+    birthdate: '<dateTime("2000-01-01", "Europe/Paris")>'
+    avatar: '<imageUrl(300, 300)>'
+    gender: '<randomElement(["male", "female", "neutral"])>'
+    city: '<city()>'
+    interestedBy: '<randomElement(["male", "female", "all"])>'

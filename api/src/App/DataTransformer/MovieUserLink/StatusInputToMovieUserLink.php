@@ -25,7 +25,7 @@ class StatusInputToMovieUserLink implements DataTransformerInterface
         $movie = new MovieUserLink();
 
         $movie
-            ->setLiked($object->isLiked());
+            ->setLiked($object->isLiked() ? 1 : -1);
 
         return $movie;
     }
