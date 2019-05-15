@@ -52,6 +52,13 @@ use Doctrine\ORM\Mapping as ORM;
  *                      "type"="string",
  *                      "required"=true,
  *                      "description"="Movie id"
+ *                  },
+ *                  {
+ *                      "in": "body",
+ *                      "name":"body",
+ *                      "type":"object",
+ *                      "description": "Status like",
+ *                      "example": {"liked": true}
  *                  }
  *              }
  *          }
