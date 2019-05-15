@@ -1,14 +1,31 @@
 import RequestAPI from './RequestAPI'
+import ReactDOM from "react-dom";
+import React from "react";
 
 export default (state = [], action) => {
     switch (action.type) {
         case 'LOGIN':
-            return RequestAPI('/login', 'POST', {email: action.email, password: action.password})
+            let email = action.component.state.form.email;
+            let password = action.component.state.form.password;
+            let component = action.component;
+            return RequestAPI('/login', 'POST', {email: email, password: password})
             .then(json => {
                 if (json.status === 201) {
                     json.json().then(user => {
                         sessionStorage.setItem('user', JSON.stringify(user));
-                        console.log(sessionStorage.getItem('user'));
+                        component.setState({
+                            ...component.state,
+                            redirect: true
+                        });
+                    });
+                } else {
+                    json.json().then(error => {
+                        console.log(error.detail);
+                        component.setState({
+                            ...component.state,
+                            displayError: true,
+                            errorMessage: error.detail
+                        });
                     });
                 }
             });

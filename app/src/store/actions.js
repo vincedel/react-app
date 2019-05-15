@@ -1,7 +1,6 @@
-export function login (email, password) {
+export function login (component) {
     return ({
         type: "LOGIN",
-        email,
-        password
+        component: component
     })
 }
