@@ -15,9 +15,7 @@ Infra\Entity\Movie:
     type:
       - 'Drame'
     year: 2019
-    description: 'Un jeune homme a le don rare de reconnaître chaque son qu’il entend. A bord d’un sous-marin nucléaire français, tout repose sur lui, l’Oreille d’Or.
-Réputé infaillible, il commet pourtant une erreur qui met l’équipage en danger de mort. Il veut retrouver la confiance de ses camarades mais sa quête les entraîne dans une situation encore plus dramatique.
-Dans le monde de la dissuasion nucléaire et de la désinformation, ils se retrouvent tous pris au piège d’un engrenage incontrôlable. '
+    description: 'Un jeune homme a le don rare de reconnaître chaque son qu’il entend. A bord d’un sous-marin nucléaire français, tout repose sur lui, l’Oreille d’Or.Réputé infaillible, il commet pourtant une erreur qui met l’équipage en danger de mort. Il veut retrouver la confiance de ses camarades mais sa quête les entraîne dans une situation encore plus dramatique.Dans le monde de la dissuasion nucléaire et de la désinformation, ils se retrouvent tous pris au piège d’un engrenage incontrôlable. '
     poster: 'http://fr.web.img5.acsta.net/pictures/18/12/10/09/46/3892829.jpg'
 
   movie_3:
@@ -36,9 +34,7 @@ Dans le monde de la dissuasion nucléaire et de la désinformation, ils se retro
       - 'Drame'
       - 'Comédie'
     year: 2019
-    description: 'Préoccupé, Max est parti dans sa maison au bord de la mer pour se ressourcer. Sa bande de potes, qu’il n’a pas vue depuis plus de 3 ans débarque par surprise pour lui fêter son anniversaire ! La surprise est entière mais l’accueil l’est beaucoup moins...
-Max s’enfonce alors dans une comédie du bonheur qui sonne faux, et qui mettra le groupe dans des situations pour le moins inattendues.
-Les enfants ont grandi,  d’autres sont nés, les parents n’ont plus les mêmes priorités...  Les séparations, les accidents de la vie... Quand tous décident de ne plus mettre de petits mouchoirs sur les gros bobards, que reste-t-il de l’amitié ? '
+    description: 'Préoccupé, Max est parti dans sa maison au bord de la mer pour se ressourcer. Sa bande de potes, qu’il n’a pas vue depuis plus de 3 ans débarque par surprise pour lui fêter son anniversaire ! La surprise est entière mais l’accueil l’est beaucoup moins...Max s’enfonce alors dans une comédie du bonheur qui sonne faux, et qui mettra le groupe dans des situations pour le moins inattendues.Les enfants ont grandi,  d’autres sont nés, les parents n’ont plus les mêmes priorités...  Les séparations, les accidents de la vie... Quand tous décident de ne plus mettre de petits mouchoirs sur les gros bobards, que reste-t-il de l’amitié ? '
     poster: 'http://fr.web.img6.acsta.net/r_1280_720/pictures/19/03/22/10/28/3070611.jpg'
 
   movie_5:
@@ -58,10 +54,7 @@ Les enfants ont grandi,  d’autres sont nés, les parents n’ont plus les mêm
       - 'Biopic'
       - 'Drame'
     year: 2017
-    description: 'Une incroyable histoire vraie : à 5 ans, Saroo se retrouve seul dans un train traversant l’Inde qui l’emmène malgré lui à des milliers de kilomètres de sa famille. Perdu, le petit garçon doit apprendre à survivre seul dans l’immense ville de Calcutta. Après des mois d’errance, il est recueilli dans un orphelinat et adopté par un couple d’Australiens.
-25 ans plus tard, Saroo est devenu un véritable Australien, mais il pense toujours à sa famille en Inde.
-Armé de quelques rares souvenirs et d’une inébranlable détermination, il commence à parcourir des photos satellites sur Google Earth, dans l’espoir de reconnaître son village.
-Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard d’habitants ?'
+    description: 'Une incroyable histoire vraie : à 5 ans, Saroo se retrouve seul dans un train traversant l’Inde qui l’emmène malgré lui à des milliers de kilomètres de sa famille. Perdu, le petit garçon doit apprendre à survivre seul dans l’immense ville de Calcutta. Après des mois d’errance, il est recueilli dans un orphelinat et adopté par un couple d’Australiens.25 ans plus tard, Saroo est devenu un véritable Australien, mais il pense toujours à sa famille en Inde.Armé de quelques rares souvenirs et d’une inébranlable détermination, il commence à parcourir des photos satellites sur Google Earth, dans l’espoir de reconnaître son village.Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard d’habitants ?'
     poster: 'https://is5-ssl.mzstatic.com/image/thumb/Video52/v4/52/75/f8/5275f8af-1d2b-d4d3-64e2-d5b08957537c/artwork.jpg/268x0w.jpg'
 
   movie_7:
