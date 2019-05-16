@@ -19,14 +19,12 @@ const styles = theme => ({
 });
 
 class CustomInputSelect extends React.Component {
-    state = {
-        gender: '',
-        open: false,
-    };
-
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            open: false,
+        };
+    }
 
     handleClose = () => {
         this.setState({ open: false });
@@ -38,28 +36,30 @@ class CustomInputSelect extends React.Component {
 
     render() {
         const { classes } = this.props;
-
+        let options = [];
+        if (typeof this.props.options !== "undefined") {
+            this.props.options.map((item, key) => {
+                options.push(<MenuItem key={this.props.name+'_'+item.value} value={item.value}>{item.name}</MenuItem>)
+            });
+        }
         return (
-            <form autoComplete="off">
-                <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="demo-controlled-open-select">Genre</InputLabel>
-                    <Select
-                        open={this.state.open}
-                        onClose={this.handleClose}
-                        onOpen={this.handleOpen}
-                        value={this.state.gender}
-                        onChange={this.handleChange}
-                        inputProps={{
-                            name: 'gender',
-                            id: 'demo-controlled-open-select',
-                        }}
-                    >
-                        <MenuItem value={10}>Homme</MenuItem>
-                        <MenuItem value={20}>Femme</MenuItem>
-                        <MenuItem value={30}>Autre</MenuItem>
-                    </Select>
-                </FormControl>
-            </form>
+            <FormControl className={classes.formControl}>
+                <InputLabel required={true} htmlFor={this.props.name+"-select"}>{this.props.label}</InputLabel>
+                <Select
+                    ref={this.input}
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    onOpen={this.handleOpen}
+                    value={this.props.value}
+                    onChange={this.props.onChange}
+                    inputProps={{
+                        name: this.props.name,
+                        id: this.props.name+"-select",
+                    }}
+                >
+                    {options}
+                </Select>
+            </FormControl>
         );
     }
 }

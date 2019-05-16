@@ -29,13 +29,29 @@ import registerPageStyle from "./../../assets/jss/material-kit-react/views/regis
 
 import image from "./../../assets/img/bg7.jpg";
 import CustomInputSelect from "../../components/CustomInputSelect/CustomInputSelect";
+import { register } from "../../store/actions";
+import {connect} from "react-redux";
+import SnackbarContent from "../../components/Snackbar/SnackbarContent";
+import {Redirect} from "react-router-dom";
 
 class RegisterPage extends React.Component {
     constructor(props) {
         super(props);
         // we use this to make the card to appear after the page has been rendered
         this.state = {
-            cardAnimaton: "cardHidden"
+            cardAnimaton: "cardHidden",
+            form: {
+                fname: '',
+                name: '',
+                email: '',
+                password: '',
+                reapeatPassword: '',
+                birthdate: '',
+                city: '',
+                avatar: '',
+                gender: '',
+                interestedBy: ''
+            }
         };
     }
     componentDidMount() {
@@ -47,7 +63,27 @@ class RegisterPage extends React.Component {
             700
         );
     }
+
+    handleFormChange = (event) => {
+        this.setState({
+            ...this.state,
+            form: {
+                ...this.state.form,
+                [event.target.name]: event.target.value
+            }
+        });
+    };
+
+    handleSubmit = e => {
+        e.preventDefault();
+        let form = this.state.form;
+        this.props.register(form);
+    };
+
     render() {
+        if (this.props.redirect) {
+            return <Redirect to="/login" />
+        }
         const { classes, ...rest } = this.props;
         return (
             <div>
@@ -63,47 +99,74 @@ class RegisterPage extends React.Component {
                         <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
                                 <Card className={classes[this.state.cardAnimaton]}>
-                                    <form className={classes.form}>
+                                    <form className={classes.form} onSubmit={this.handleSubmit}>
                                         <CardHeader color="primary" className={classes.cardHeader}>
                                             <img src="http://placehold.it/250x150/" alt="CINER"/>
                                         </CardHeader>
                                         <p className={classes.divider}>Inscription mon con</p>
                                         <CardBody>
+                                            {this.props.displayError && <SnackbarContent color="danger" message={this.props.errorMessage}/>}
                                             <CustomInput
                                                 labelText="Nom"
-                                                id="first"
+                                                id="name"
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
                                                 inputProps={{
                                                     type: "text",
+                                                    name: "name",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <People className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
                                             />
 
                                             <CustomInput
                                                 labelText="Prenom"
-                                                id="first"
+                                                id="fname"
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
                                                 inputProps={{
                                                     type: "text",
+                                                    name: "fname",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <People className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
                                             />
 
-                                            <CustomInputSelect/>
+                                            <CustomInputSelect
+                                                label="Genre"
+                                                name="gender"
+                                                value={this.state.form.gender}
+                                                options={[
+                                                    {value: 'male', name: 'Male'},
+                                                    {value: 'female', name: 'Female'},
+                                                    {value: 'neutral', name: 'Neutral'}
+                                                ]}
+                                                onChange={this.handleFormChange}
+                                            />
 
-
+                                            <CustomInputSelect
+                                                label="Intéressé par"
+                                                name="interestedBy"
+                                                value={this.state.form.interestedBy}
+                                                options={[
+                                                    {value: 'male', name: 'Male'},
+                                                    {value: 'female', name: 'Female'},
+                                                    {value: 'neutral', name: 'Neutral'}
+                                                ]}
+                                                onChange={this.handleFormChange}
+                                            />
 
                                             <CustomInput
                                                 labelText="Ville"
@@ -113,27 +176,33 @@ class RegisterPage extends React.Component {
                                                 }}
                                                 inputProps={{
                                                     type: "text",
+                                                    name: "city",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <City className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
                                             />
 
                                             <CustomInput
                                                 labelText="Date de naissance"
-                                                id="date"
+                                                id="birthdate"
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
                                                 inputProps={{
                                                     type: "date",
+                                                    name: "birthdate",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <Calendar className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
 
                                             />
@@ -146,48 +215,57 @@ class RegisterPage extends React.Component {
                                                 }}
                                                 inputProps={{
                                                     type: "email",
+                                                    name: "email",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <Email className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
                                             />
                                             <CustomInput
                                             labelText="Mot de Passe"
-                                            id="pass"
+                                            id="password"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
                                             inputProps={{
                                                 type: "password",
+                                                name: "password",
+                                                required: true,
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <Lock className={classes.inputIconsColor}>
                                                         </Lock>
                                                     </InputAdornment>
-                                                )
+                                                ),
+                                                onChange: this.handleFormChange
                                             }}
                                         />
                                             <CustomInput
-                                                labelText="Confirmation"
-                                                id="pass"
+                                                labelText="Confirmez votre mot de passe"
+                                                id="repeatPassword"
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
                                                 inputProps={{
                                                     type: "password",
+                                                    name: "repeatPassword",
+                                                    required: true,
                                                     endAdornment: (
                                                         <InputAdornment position="end">
                                                             <Lock className={classes.inputIconsColor}>
                                                             </Lock>
                                                         </InputAdornment>
-                                                    )
+                                                    ),
+                                                    onChange: this.handleFormChange
                                                 }}
                                             />
                                         </CardBody>
                                         <CardFooter className={classes.cardFooter}>
-                                            <Button simple color="primary" size="lg">
+                                            <Button simple color="primary" size="lg" type="submit">
                                                 Inscription
                                             </Button>
                                         </CardFooter>
@@ -202,4 +280,18 @@ class RegisterPage extends React.Component {
     }
 }
 
-export default withStyles(registerPageStyle)(RegisterPage);
+const mapStateToProps = (state) => {
+    return {
+        displayError: state.registerPage.displayError,
+        errorMessage: state.registerPage.errorMessage,
+        redirect: state.registerPage.redirect,
+    };
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    register: register(dispatch)
+});
+
+const container = connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
+
+export default withStyles(registerPageStyle)(container);
