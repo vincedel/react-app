@@ -7,6 +7,7 @@ import Icon from "@material-ui/core/Icon";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 import Lock from "@material-ui/icons/Lock";
+
 // core components
 import Header from "./../../components/Header/Header.jsx";
 import HeaderLinks from "./../../components/Header/HeaderLinks.jsx";
