@@ -38,6 +38,11 @@ export default (state = initialState, action) => {
             newState.loginPage.displayError = false;
             sessionStorage.setItem('user', JSON.stringify(action.payload.user));
             return newState;
+
+        case 'LOGOUT':
+            sessionStorage.removeItem('user');
+            newState.user = null;
+            return newState;
         default:
             return state
     }

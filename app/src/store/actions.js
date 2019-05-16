@@ -62,12 +62,12 @@ const register = (dispatch) => (form) => {
             errorMessage: message
         }
     })
-    
-    
-    // RequestAPI('/sign-up', 'POST', { fname, name, email, password, birthdate, avatar, gender, city, interestedBy })
-    //     .then(response => {
-    //
-    //     })
 };
 
-export { login, register };
+const logout = (dispatch) => () => {
+    return dispatch({
+        type: "LOGOUT"
+    });
+};
+
+export { login, register, logout };
