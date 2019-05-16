@@ -1,22 +1,22 @@
 import React from "react";
-import { Redirect } from 'react-router-dom'
-export default class ProtectedRoute extends React.Component{
-    isAuthenticated() {
-        if (sessionStorage.getItem('user') != null) {
-            let user = JSON.parse(sessionStorage.getItem('user'));
-            console.log(user);
-            if (typeof user.token !== 'undefined') {
-                return true;
-            }
-        }
-        return false;
-    }
-
+import {Redirect, Route} from 'react-router-dom'
+import {connect} from "react-redux";
+class ProtectedRoute extends React.Component{
     render() {
         return (
-            this.isAuthenticated() === true
-                ? this.props.component
+             this.props.user !== null
+                ? <Route path={this.props.path} component={this.props.component} />
                 : <Redirect to="/login" />
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    user: state.user
+});
+
+const mapDispatchToProps = (dispatch) => ({});
+
+const container = connect(mapStateToProps, mapDispatchToProps)(ProtectedRoute);
+
+export default (container);

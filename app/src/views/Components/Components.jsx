@@ -19,7 +19,6 @@ import SectionBasics from "./Sections/SectionBasics.jsx";
 import SectionNavbars from "./Sections/SectionNavbars.jsx";
 import SectionTabs from "./Sections/SectionTabs.jsx";
 import SectionPills from "./Sections/SectionPills.jsx";
-import SectionNotifications from "./Sections/SectionNotifications.jsx";
 import SectionTypography from "./Sections/SectionTypography.jsx";
 import SectionJavascript from "./Sections/SectionJavascript.jsx";
 import SectionCarousel from "./Sections/SectionCarousel.jsx";
@@ -66,7 +65,6 @@ class Components extends React.Component {
           <SectionNavbars />
           <SectionTabs />
           <SectionPills />
-          <SectionNotifications />
           <SectionTypography />
           <SectionJavascript />
           <SectionCarousel />

@@ -15,16 +15,22 @@ class SnackbarContent extends React.Component {
   constructor(props) {
     super(props);
     this.closeAlert = this.closeAlert.bind(this);
-    const { classes, message, color, close, icon } = props;
+  }
+  closeAlert() {
+    this.setState({ alert: null });
+  }
+
+  createAlert() {
+    const { classes, message, color, close, icon } = this.props;
     var action = [];
     if (close !== undefined) {
       action = [
         <IconButton
-          className={classes.iconButton}
-          key="close"
-          aria-label="Close"
-          color="inherit"
-          onClick={this.closeAlert}
+            className={classes.iconButton}
+            key="close"
+            aria-label="Close"
+            color="inherit"
+            onClick={this.closeAlert}
         >
           <Close className={classes.close} />
         </IconButton>
@@ -37,7 +43,7 @@ class SnackbarContent extends React.Component {
         snackIcon = <props.icon className={classes.icon} />;
         break;
       case "string":
-        snackIcon = <Icon className={classes.icon}>{props.icon}</Icon>;
+        snackIcon = <Icon className={classes.icon}>{this.props.icon}</Icon>;
         break;
       default:
         snackIcon = null;
@@ -46,26 +52,25 @@ class SnackbarContent extends React.Component {
 
     this.state = {
       alert: (
-        <Snack
-          message={
-            <div>
-              {snackIcon}
-              {message}
-              {close !== undefined ? action : null}
-            </div>
-          }
-          classes={{
-            root: classes.root + " " + classes[color],
-            message: classes.message + " " + classes.container
-          }}
-        />
+          <Snack
+              message={
+                <div>
+                  {snackIcon}
+                  {message}
+                  {close !== undefined ? action : null}
+                </div>
+              }
+              classes={{
+                root: classes.root + " " + classes[color],
+                message: classes.message + " " + classes.container
+              }}
+          />
       )
     };
   }
-  closeAlert() {
-    this.setState({ alert: null });
-  }
+
   render() {
+    this.createAlert();
     return this.state.alert;
   }
 }
