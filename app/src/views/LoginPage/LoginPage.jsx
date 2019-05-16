@@ -7,6 +7,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import Lock from "@material-ui/icons/Lock";
+
 // core components
 import GridContainer from "./../../components/Grid/GridContainer.jsx";
 import GridItem from "./../../components/Grid/GridItem.jsx";
@@ -21,7 +22,7 @@ import loginPageStyle from "./../../assets/jss/material-kit-react/views/loginPag
 import SnackbarContent from "../../components/Snackbar/SnackbarContent";
 
 import image from "./../../assets/img/bg7.jpg";
-import login from '../../store/actions';
+import { login } from '../../store/actions';
 
 class LoginPage extends React.Component {
     constructor(props) {

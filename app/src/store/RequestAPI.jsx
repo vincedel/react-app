@@ -9,7 +9,6 @@ export default (url, method, params = null) => {
             headers['X-AUTH-TOKEN'] = user.token;
         }
     }
-
     return fetch("http://api-react.valentin-lacour.pro"+url, {
         method: method,
         headers: headers,
