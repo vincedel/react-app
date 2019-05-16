@@ -1,6 +1,3 @@
-import React from "react";
-
-
 export default (url, method, params = null) => {
     let headers = {
         'Accept': 'application/json',

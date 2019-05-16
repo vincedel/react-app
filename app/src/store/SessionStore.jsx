@@ -1,5 +1,8 @@
 const initialState = {
-    user: null,
+    user: typeof sessionStorage.getItem('user') !== "undefined"
+        ? JSON.parse(sessionStorage.getItem('user'))
+        : null
+    ,
     loginPage: {
         displayError: false,
         errorMessage: '',
@@ -20,10 +23,8 @@ export default (state = initialState, action) => {
             newState.user = action.payload.user;
             newState.loginPage.errorMessage = '';
             newState.loginPage.displayError = false;
+            sessionStorage.setItem('user', JSON.stringify(action.payload.user));
             return newState;
-
-        case 'SIGN_UP':
-            // return state.concat([action.text]);
         default:
             return state
     }
