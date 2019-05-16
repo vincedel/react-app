@@ -6,7 +6,7 @@ Infra\Entity\Movie:
       - 'Action'
       - 'Aventure'
     year: 2016
-    description: 'Wade Wilson, un ancien militaire des forces spéciales, est devenu mercenaire. Après avoir subi une expérimentation hors-norme qui va accélérer ses pouvoirs de guérison, il va devenir Deadpool. Armé de ses nouvelles capacités et d'un humour noir survolté, il va traquer l'homme qui a bien failli anéantir sa vie.'
+    description: 'Wade Wilson, un ancien militaire des forces spéciales, est devenu mercenaire. Après avoir subi une expérimentation hors-norme qui va accélérer ses pouvoirs de guérison, il va devenir Deadpool. Armé de ses nouvelles capacités et d''un humour noir survolté, il va traquer l''homme qui a bien failli anéantir sa vie.'
     poster: 'http://t2.gstatic.com/images?q=tbn:ANd9GcT_GDz-2Xb-Z8XubX6Q_SXlNnS_KRQ78cfTlpQCI6DtH_bEtjwd'
 
   movie_2:
@@ -26,7 +26,7 @@ Dans le monde de la dissuasion nucléaire et de la désinformation, ils se retro
     type:
       - 'horreur'
     year: 1979
-    description: 'Durant le voyage de retour d'un immense cargo spatial en mission commerciale de routine, ses passagers, cinq hommes et deux femmes plongés en hibernation, sont tirés de leur léthargie dix mois plus tôt que prévu par Mother, l'ordinateur de bord. Ce dernier a en effet capté dans le silence interplanétaire des signaux sonores, et suivant une certaine clause du contrat de navigation, les astronautes sont chargés de prospecter tout indice de vie dans l'espace.'
+    description: 'Durant le voyage de retour d''un immense cargo spatial en mission commerciale de routine, ses passagers, cinq hommes et deux femmes plongés en hibernation, sont tirés de leur léthargie dix mois plus tôt que prévu par Mother, l''ordinateur de bord. Ce dernier a en effet capté dans le silence interplanétaire des signaux sonores, et suivant une certaine clause du contrat de navigation, les astronautes sont chargés de prospecter tout indice de vie dans l''espace.'
     poster: 'http://t0.gstatic.com/images?q=tbn:ANd9GcT8vuWruM-ziEj9MIM30-TUOxfeV15kbKt81OKlC_W1vrOcR8Sa'
 
   movie_4:
@@ -48,7 +48,7 @@ Les enfants ont grandi,  d’autres sont nés, les parents n’ont plus les mêm
       - 'Action'
       - 'SF'
     year: 2019
-    description: 'Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III'
+    description: 'Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l''équipe de super-héros des comics Marvel, les Avengers. Il s''agit du 22ᵉ film de l''Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III'
     poster: 'http://t3.gstatic.com/images?q=tbn:ANd9GcSbIzUFFVjbCs3bNx3px0sdT38SoU5hrG3mhV5hrUsieuwz62tc'
 
   movie_6:
@@ -101,22 +101,22 @@ Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard 
       - 'Policier'
       - 'Drame'
     year: 1984
-    description: 'l était une fois deux truands juifs, Max et Noodles, liés par un pacte d'éternelle amitié. Débutant au début du siècle par de fructueux trafics dans le ghetto de New York, ils voient leurs chemins se séparer... '
+    description: 'l était une fois deux truands juifs, Max et Noodles, liés par un pacte d''éternelle amitié. Débutant au début du siècle par de fructueux trafics dans le ghetto de New York, ils voient leurs chemins se séparer... '
     poster : 'http://fr.web.img3.acsta.net/pictures/15/03/27/15/08/436989.jpg'
 
   movie_11:
     id: '<current()>'
-    title: ' Star Wars : Episode V - L'Empire contre-attaque  '
+    title: ' Star Wars : Episode V - L''Empire contre-attaque  '
     type:
       - 'Aventure'
       - 'SF'
     year: 1980
-    description: 'Malgré la destruction de l'Etoile Noire, l'Empire maintient son emprise sur la galaxie, et poursuit sans relâche sa lutte contre l'Alliance rebelle. Basés sur la planète glacée de Hoth, les rebelles essuient un assaut des troupes impériales... '
+    description: 'Malgré la destruction de l''Etoile Noire, l''Empire maintient son emprise sur la galaxie, et poursuit sans relâche sa lutte contre l''Alliance rebelle. Basés sur la planète glacée de Hoth, les rebelles essuient un assaut des troupes impériales... '
     poster: 'http://fr.web.img3.acsta.net/r_1280_720/medias/nmedia/00/02/44/28/empire.jpg'
 
   movie_12:
     id: '<current()>'
-    title: 'Il était une fois dans l'Ouest'
+    title: 'Il était une fois dans l''Ouest'
     type:
       - 'Western'
     year: 1969
@@ -130,7 +130,7 @@ Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard 
       - 'Thriller'
       - 'SF'
     year: 2010
-    description: 'Au lieu de subtiliser un rêve, un voleur expérimenté et son équipe doivent faire l'inverse : implanter une idée dans l'esprit d'un individu. S'ils y parviennent, il pourrait s'agir du crime parfait ... '
+    description: 'Au lieu de subtiliser un rêve, un voleur expérimenté et son équipe doivent faire l''inverse : implanter une idée dans l''esprit d''un individu. S''ils y parviennent, il pourrait s''agir du crime parfait ... '
     poster: 'https://images-na.ssl-images-amazon.com/images/I/51ShRC1YMrL._SY450_.jpg'
 
   movie_14:
@@ -159,7 +159,7 @@ Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard 
       - 'Comédie-Dramatique'
       - 'Romance'
     year: 1994
-    description: 'Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump. '
+    description: 'Quelques décennies d''histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l''étrange odyssée d''un homme simple et pur, Forrest Gump. '
     poster: 'http://fr.web.img4.acsta.net/pictures/15/10/13/15/12/514297.jpg'
 
   movie_17:
@@ -169,7 +169,7 @@ Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard 
       - 'Drame'
       - 'Romance'
     year: 2018
-    description: 'Jackson Maine, musicien chevronné, découvre Ally, une chanteuse qui a du mal à percer. Alors que la jeune femme est sur le point de renoncer à faire carrière, Jackson tombe amoureux d'elle et la propulse sur le devant de la scène. Bientôt éclipsé par le succès d'Ally, il vit de plus en plus de mal son propre déclin…'
+    description: 'Jackson Maine, musicien chevronné, découvre Ally, une chanteuse qui a du mal à percer. Alors que la jeune femme est sur le point de renoncer à faire carrière, Jackson tombe amoureux d''elle et la propulse sur le devant de la scène. Bientôt éclipsé par le succès d''Ally, il vit de plus en plus de mal son propre déclin…'
     poster: 'https://images-na.ssl-images-amazon.com/images/I/41a9wL9kV4L.jpg'
 
   movie_18:
@@ -190,7 +190,7 @@ Mais peut-on imaginer retrouver une simple famille dans un pays d’un milliard 
       - 'Guerre'
       - 'Drame'
     year: 2015
-    description: 'Tireur d élite des Navy SEAL, Chris Kyle est envoyé en Irak dans un seul but : protéger ses camarades. Sa précision chirurgicale sauve d innombrables vies humaines sur le champ de bataille et, tandis que les récits de ses exploits se multiplient, il décroche le surnom de "La Légende". Cependant, sa réputation se propage au-delà des lignes ennemies, si bien que sa tête est mise à prix et qu il devient une cible privilégiée des insurgés. Malgré le danger, et l angoisse dans laquelle vit sa famille, Chris participe à quatre batailles décisives parmi les plus terribles de la guerre en Irak, s imposant ainsi comme l incarnation vivante de la devise des SEAL : "Pas de quartier !" Mais en rentrant au pays, Chris prend conscience qu'il ne parvient pas à retrouver une vie normale. '
+    description: 'Tireur d élite des Navy SEAL, Chris Kyle est envoyé en Irak dans un seul but : protéger ses camarades. Sa précision chirurgicale sauve d innombrables vies humaines sur le champ de bataille et, tandis que les récits de ses exploits se multiplient, il décroche le surnom de "La Légende". Cependant, sa réputation se propage au-delà des lignes ennemies, si bien que sa tête est mise à prix et qu il devient une cible privilégiée des insurgés. Malgré le danger, et l angoisse dans laquelle vit sa famille, Chris participe à quatre batailles décisives parmi les plus terribles de la guerre en Irak, s imposant ainsi comme l incarnation vivante de la devise des SEAL : "Pas de quartier !" Mais en rentrant au pays, Chris prend conscience qu''il ne parvient pas à retrouver une vie normale. '
     poster: 'http://fr.web.img4.acsta.net/pictures/14/10/14/09/50/570218.jpg'
 
   movie_20:
