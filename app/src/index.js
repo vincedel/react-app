@@ -14,6 +14,7 @@ import Components from "./views/Components/Components.jsx";
 import LandingPage from "./views/LandingPage/LandingPage.jsx";
 import ProfilePage from "./views/ProfilePage/ProfilePage.jsx";
 import LoginPage from "./views/LoginPage/LoginPage.jsx";
+import LogoutPage from "./views/LogoutPage/LogoutPage.jsx";
 import RegisterPage from "./views/RegisterPage/RegisterPage.jsx";
 
 const hist = createBrowserHistory();
@@ -25,6 +26,7 @@ const App = () => (
                 <ProtectedRoute path="/landing-page" component={LandingPage} />
                 <ProtectedRoute path="/profile-page" component={ProfilePage} />
                 <Route path="/login" component={LoginPage} />
+                <Route path="/logout" component={LogoutPage} />
                 <Route path="/register-page" component={RegisterPage} />
                 <ProtectedRoute path="/" component={Components} />
             </Switch>
