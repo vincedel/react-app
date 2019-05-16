@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import "./assets/scss/material-kit-react.scss";
 
 import ProtectedRoute from './security/ProtectedRoute'
-import SessionStore from './store/SessionStore';
 import Store from './store/Store'
 
 // pages for this product
@@ -18,7 +17,8 @@ import LoginPage from "./views/LoginPage/LoginPage.jsx";
 import RegisterPage from "./views/RegisterPage/RegisterPage.jsx";
 
 const hist = createBrowserHistory();
-ReactDOM.render(
+
+const App = () => (
     <Provider store={Store}>
         <Router history={hist}>
             <Switch>
@@ -29,6 +29,7 @@ ReactDOM.render(
                 <ProtectedRoute path="/" component={Components} />
             </Switch>
         </Router>
-    </Provider>,
-  document.getElementById("root")
+    </Provider>
 );
+
+ReactDOM.render(<App />, document.getElementById("root"));

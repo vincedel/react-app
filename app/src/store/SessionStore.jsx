@@ -1,34 +1,27 @@
-import RequestAPI from './RequestAPI'
-import ReactDOM from "react-dom";
-import React from "react";
+const initialState = {
+    user: null,
+    loginPage: {
+        displayError: false,
+        errorMessage: '',
+    }
+};
 
-export default (state = [], action) => {
+export default (state = initialState, action) => {
+    let newState = Object.assign({}, state);
+
     switch (action.type) {
-        case 'LOGIN':
-            let email = action.component.state.form.email;
-            let password = action.component.state.form.password;
-            let component = action.component;
-            return RequestAPI('/login', 'POST', {email: email, password: password})
-            .then(json => {
-                if (json.status === 201) {
-                    json.json().then(user => {
-                        sessionStorage.setItem('user', JSON.stringify(user));
-                        component.setState({
-                            ...component.state,
-                            redirect: true
-                        });
-                    });
-                } else {
-                    json.json().then(error => {
-                        console.log(error.detail);
-                        component.setState({
-                            ...component.state,
-                            displayError: true,
-                            errorMessage: error.detail
-                        });
-                    });
-                }
-            });
+        case 'LOGIN_ERROR':
+            console.log('error login');
+            newState.loginPage.errorMessage = action.payload.errorMessage;
+            newState.loginPage.displayError = true;
+            return newState;
+
+        case 'LOGIN_SUCCESS':
+            newState.user = action.payload.user;
+            newState.loginPage.errorMessage = '';
+            newState.loginPage.displayError = false;
+            return newState;
+
         case 'SIGN_UP':
             // return state.concat([action.text]);
         default:

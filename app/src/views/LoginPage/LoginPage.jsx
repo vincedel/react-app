@@ -26,7 +26,8 @@ import SnackbarContent from "../../components/Snackbar/SnackbarContent";
 
 import image from "./../../assets/img/bg7.jpg";
 import {bindActionCreators} from 'redux'
-import * as actions from '../../store/actions';
+import login from '../../store/actions';
+import RequestAPI from "../../store/RequestAPI";
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -36,11 +37,7 @@ class LoginPage extends React.Component {
             cardAnimaton: "cardHidden",
             form: {
                 email: '',
-                password: '',
-                errorEmail: false,
-                displayError: false,
-                errorMessage: '',
-                redirect: false
+                password: ''
             }
         };
         this.cardBody = React.createRef();
@@ -60,17 +57,14 @@ class LoginPage extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.actions.login(this);
+        this.props.login(this.state.form.email, this.state.form.password);
     };
 
     render() {
         const {classes, ...rest} = this.props;
         let error = null;
-        if (this.state.redirect || isAuthenticated) {
+        if (this.props.hasUser) {
             return <Redirect to="/" />
-        }
-        if (this.state.displayError) {
-            error = <SnackbarContent color="danger" message={this.state.errorMessage}/>;
         }
         return (
             <div>
@@ -92,11 +86,10 @@ class LoginPage extends React.Component {
                                             <img src="http://placehold.it/250x150/" alt="CINER"/>
                                         </CardHeader>
                                         <CardBody id="login-body" ref={this.cardBody}>
-                                            {error}
+                                            {this.props.displayError && <SnackbarContent color="danger" message={this.props.errorMessage}/>}
                                             <CustomInput
                                                 labelText="email"
                                                 id="email"
-                                                error={this.state.errorEmail}
                                                 ref={this.email}
                                                 value={this.state.form.email}
                                                 formControlProps={{
@@ -166,12 +159,60 @@ class LoginPage extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    actions: bindActionCreators(actions, dispatch)
+// class LoginPage extends React.Component {
+//     state = {
+//         form: {
+//             email: '',
+//             password: '',
+//         }
+//     };
+//
+//     handleFormChange = event => {
+//         this.setState({
+//             ...this.state,
+//             form: {
+//                 ...this.state.form,
+//                 [event.target.name]: event.target.value
+//             }
+//         });
+//     };
+//
+//     handleSubmit = e => {
+//         const { login } = this.props;
+//         const { email, password } = this.state.form;
+//
+//         e.preventDefault();
+//         login(email, password);
+//     };
+//
+//     render () {
+//         const { hasUser, displayError, errorMessage } = this.props;
+//         console.log('render');
+//         return hasUser
+//             ? (
+//                 <Redirect to="/" />
+//             )
+//             : (
+//                 <form onSubmit={this.handleSubmit}>
+//                     {displayError && <div>{errorMessage}</div>}
+//                     <input name="email" type="text" onChange={this.handleFormChange} />
+//                     <input name="password" type="text" onChange={this.handleFormChange} />
+//                     <input type="submit" value="envoi"/>
+//                 </form>
+//             );
+//     }
+// }
+
+const mapStateToProps = (state) => ({
+    displayError: state.loginPage.displayError,
+    errorMessage: state.loginPage.errorMessage,
+    hasUser: !!state.user
 });
 
-export default withStyles(loginPageStyle)(
-    compose(
-        connect(null, mapDispatchToProps),
-    )(LoginPage)
-);
+const mapDispatchToProps = (dispatch) => ({
+    login: login(dispatch)
+});
+
+const container = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+
+export default withStyles(loginPageStyle)(container);
