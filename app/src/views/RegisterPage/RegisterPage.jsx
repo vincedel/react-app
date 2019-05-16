@@ -1,11 +1,10 @@
 import React from "react";
-import {connect} from 'react-redux'
-import { Redirect } from 'react-router-dom'
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
+import People from "@material-ui/icons/People";
 import Lock from "@material-ui/icons/Lock";
 // core components
 import GridContainer from "./../../components/Grid/GridContainer.jsx";
@@ -17,48 +16,29 @@ import CardHeader from "./../../components/Card/CardHeader.jsx";
 import CardFooter from "./../../components/Card/CardFooter.jsx";
 import CustomInput from "./../../components/CustomInput/CustomInput.jsx";
 
-import loginPageStyle from "./../../assets/jss/material-kit-react/views/loginPage.jsx";
-import SnackbarContent from "../../components/Snackbar/SnackbarContent";
+import registerPageStyle from "./../../assets/jss/material-kit-react/views/registerPage.jsx";
 
 import image from "./../../assets/img/bg7.jpg";
-import login from '../../store/actions';
 
-class LoginPage extends React.Component {
+class RegisterPage extends React.Component {
     constructor(props) {
         super(props);
         // we use this to make the card to appear after the page has been rendered
         this.state = {
-            cardAnimaton: "cardHidden",
-            form: {
-                email: '',
-                password: ''
-            }
+            cardAnimaton: "cardHidden"
         };
-        this.cardBody = React.createRef();
-        this.email = React.createRef();
-        this.error = React.createRef();
     }
-
     componentDidMount() {
         // we add a hidden class to the card and after 700 ms we delete it and the transition appears
         setTimeout(
-            function () {
-                this.setState({cardAnimaton: ""});
+            function() {
+                this.setState({ cardAnimaton: "" });
             }.bind(this),
             700
         );
     }
-
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.login(this.state.form.email, this.state.form.password);
-    };
-
     render() {
-        const {classes, ...rest} = this.props;
-        if (this.props.hasUser) {
-            return <Redirect to="/" />
-        }
+        const { classes, ...rest } = this.props;
         return (
             <div>
                 <div
@@ -73,18 +53,31 @@ class LoginPage extends React.Component {
                         <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
                                 <Card className={classes[this.state.cardAnimaton]}>
-                                    <form className={classes.form} onSubmit={this.handleSubmit}
-                                    >
+                                    <form className={classes.form}>
                                         <CardHeader color="primary" className={classes.cardHeader}>
                                             <img src="http://placehold.it/250x150/" alt="CINER"/>
                                         </CardHeader>
-                                        <CardBody id="login-body" ref={this.cardBody}>
-                                            {this.props.displayError && <SnackbarContent color="danger" message={this.props.errorMessage}/>}
+                                        <p className={classes.divider}>Inscription mon con</p>
+                                        <CardBody>
                                             <CustomInput
-                                                labelText="email"
+                                                labelText="Lucien"
+                                                id="first"
+                                                formControlProps={{
+                                                    fullWidth: true
+                                                }}
+                                                inputProps={{
+                                                    type: "text",
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <People className={classes.inputIconsColor} />
+                                                        </InputAdornment>
+                                                    )
+                                                }}
+                                            />
+
+                                            <CustomInput
+                                                labelText="lulu_garibaldi@aol.fr"
                                                 id="email"
-                                                ref={this.email}
-                                                value={this.state.form.email}
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
@@ -92,24 +85,30 @@ class LoginPage extends React.Component {
                                                     type: "email",
                                                     endAdornment: (
                                                         <InputAdornment position="end">
-                                                            <Email className={classes.inputIconsColor}/>
+                                                            <Email className={classes.inputIconsColor} />
                                                         </InputAdornment>
-                                                    ),
-                                                    onChange: (e) => {
-                                                        this.setState({
-                                                            ...this.state,
-                                                            form: {
-                                                                ...this.state.form,
-                                                                email: e.target.value
-                                                            }
-                                                        })
-                                                    }
+                                                    )
                                                 }}
                                             />
                                             <CustomInput
-                                                labelText="Password"
+                                            labelText="Password"
+                                            id="pass"
+                                            formControlProps={{
+                                                fullWidth: true
+                                            }}
+                                            inputProps={{
+                                                type: "password",
+                                                endAdornment: (
+                                                    <InputAdornment position="end">
+                                                        <Lock className={classes.inputIconsColor}>
+                                                        </Lock>
+                                                    </InputAdornment>
+                                                )
+                                            }}
+                                        />
+                                            <CustomInput
+                                                labelText="Password confirmation"
                                                 id="pass"
-                                                value={this.state.form.password}
                                                 formControlProps={{
                                                     fullWidth: true
                                                 }}
@@ -120,23 +119,11 @@ class LoginPage extends React.Component {
                                                             <Lock className={classes.inputIconsColor}>
                                                             </Lock>
                                                         </InputAdornment>
-                                                    ),
-                                                    onChange: (e) => {
-                                                        this.setState({
-                                                            ...this.state,
-                                                            form: {
-                                                                ...this.state.form,
-                                                                password: e.target.value
-                                                            }
-                                                        })
-                                                    }
+                                                    )
                                                 }}
                                             />
                                         </CardBody>
                                         <CardFooter className={classes.cardFooter}>
-                                            <Button simple color="primary" size="lg" type="submit">
-                                                Connexion
-                                            </Button>
                                             <Button simple color="primary" size="lg">
                                                 Inscription
                                             </Button>
@@ -152,16 +139,4 @@ class LoginPage extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    displayError: state.loginPage.displayError,
-    errorMessage: state.loginPage.errorMessage,
-    hasUser: !!state.user
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    login: login(dispatch)
-});
-
-const container = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
-
-export default withStyles(loginPageStyle)(container);
+export default withStyles(registerPageStyle)(RegisterPage);
