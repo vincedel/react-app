@@ -1,4 +1,6 @@
 import React from "react";
+//import DatePicker from "react-datepicker";
+
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -6,6 +8,12 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 import Lock from "@material-ui/icons/Lock";
+import Calendar from "@material-ui/icons/CalendarTodayTwoTone"
+import City from "@material-ui/icons/LocationCity"
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl"
+
 // core components
 import GridContainer from "./../../components/Grid/GridContainer.jsx";
 import GridItem from "./../../components/Grid/GridItem.jsx";
@@ -18,7 +26,9 @@ import CustomInput from "./../../components/CustomInput/CustomInput.jsx";
 
 import registerPageStyle from "./../../assets/jss/material-kit-react/views/registerPage.jsx";
 
+
 import image from "./../../assets/img/bg7.jpg";
+import CustomInputSelect from "../../components/CustomInputSelect/CustomInputSelect";
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -60,7 +70,7 @@ class RegisterPage extends React.Component {
                                         <p className={classes.divider}>Inscription mon con</p>
                                         <CardBody>
                                             <CustomInput
-                                                labelText="Lucien"
+                                                labelText="Nom"
                                                 id="first"
                                                 formControlProps={{
                                                     fullWidth: true
@@ -76,7 +86,60 @@ class RegisterPage extends React.Component {
                                             />
 
                                             <CustomInput
-                                                labelText="lulu_garibaldi@aol.fr"
+                                                labelText="Prenom"
+                                                id="first"
+                                                formControlProps={{
+                                                    fullWidth: true
+                                                }}
+                                                inputProps={{
+                                                    type: "text",
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <People className={classes.inputIconsColor} />
+                                                        </InputAdornment>
+                                                    )
+                                                }}
+                                            />
+
+                                            <CustomInputSelect/>
+
+
+
+                                            <CustomInput
+                                                labelText="Ville"
+                                                id="city"
+                                                formControlProps={{
+                                                    fullWidth: true
+                                                }}
+                                                inputProps={{
+                                                    type: "text",
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <City className={classes.inputIconsColor} />
+                                                        </InputAdornment>
+                                                    )
+                                                }}
+                                            />
+
+                                            <CustomInput
+                                                labelText="Date de naissance"
+                                                id="date"
+                                                formControlProps={{
+                                                    fullWidth: true
+                                                }}
+                                                inputProps={{
+                                                    type: "date",
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <Calendar className={classes.inputIconsColor} />
+                                                        </InputAdornment>
+                                                    )
+                                                }}
+
+                                            />
+
+                                            <CustomInput
+                                                labelText="Email"
                                                 id="email"
                                                 formControlProps={{
                                                     fullWidth: true
@@ -91,7 +154,7 @@ class RegisterPage extends React.Component {
                                                 }}
                                             />
                                             <CustomInput
-                                            labelText="Password"
+                                            labelText="Mot de Passe"
                                             id="pass"
                                             formControlProps={{
                                                 fullWidth: true
@@ -107,7 +170,7 @@ class RegisterPage extends React.Component {
                                             }}
                                         />
                                             <CustomInput
-                                                labelText="Password confirmation"
+                                                labelText="Confirmation"
                                                 id="pass"
                                                 formControlProps={{
                                                     fullWidth: true
