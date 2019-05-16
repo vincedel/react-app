@@ -2,7 +2,7 @@ Infra\Entity\Movie:
   movie_1:
     id: 1
     title: 'Dead pool'
-    type:
+    types:
       - 'Action'
       - 'Aventure'
     year: 2016
@@ -12,7 +12,7 @@ Infra\Entity\Movie:
   movie_2:
     id: 2
     title: 'Le Champ Du Loup'
-    type:
+    types:
       - 'Drame'
     year: 2019
     description: 'Un jeune homme a le don rare de reconnaître chaque son qu’il entend. A bord d’un sous-marin nucléaire français, tout repose sur lui, l’Oreille d’Or.Réputé infaillible, il commet pourtant une erreur qui met l’équipage en danger de mort. Il veut retrouver la confiance de ses camarades mais sa quête les entraîne dans une situation encore plus dramatique.Dans le monde de la dissuasion nucléaire et de la désinformation, ils se retrouvent tous pris au piège d’un engrenage incontrôlable. '
@@ -21,7 +21,7 @@ Infra\Entity\Movie:
   movie_3:
     id: 3
     title: 'Alien'
-    type:
+    types:
       - 'horreur'
     year: 1979
     description: 'Durant le voyage de retour d''un immense cargo spatial en mission commerciale de routine, ses passagers, cinq hommes et deux femmes plongés en hibernation, sont tirés de leur léthargie dix mois plus tôt que prévu par Mother, l''ordinateur de bord. Ce dernier a en effet capté dans le silence interplanétaire des signaux sonores, et suivant une certaine clause du contrat de navigation, les astronautes sont chargés de prospecter tout indice de vie dans l''espace.'
@@ -30,7 +30,7 @@ Infra\Entity\Movie:
   movie_4:
     id: 4
     title: 'Nous finirons ensemble'
-    type:
+    types:
       - 'Drame'
       - 'Comédie'
     year: 2019
@@ -40,7 +40,7 @@ Infra\Entity\Movie:
   movie_5:
     id: 5
     title: 'Avengers: EndGame'
-    type:
+    types:
       - 'Action'
       - 'SF'
     year: 2019
@@ -50,7 +50,7 @@ Infra\Entity\Movie:
   movie_6:
     id: 6
     title: 'Lion'
-    type:
+    types:
       - 'Biopic'
       - 'Drame'
     year: 2017
@@ -60,7 +60,7 @@ Infra\Entity\Movie:
   movie_7:
     id: 7
     title: 'Tu ne tueras point'
-    type:
+    types:
       - 'Biopic'
       - 'Drame'
     year: 2019
@@ -70,7 +70,7 @@ Infra\Entity\Movie:
   movie_8:
     id: 8
     title: 'Le Roi Lion'
-    type:
+    types:
       - 'Aventure'
       - 'Animation'
     year: 1994
@@ -80,7 +80,7 @@ Infra\Entity\Movie:
   movie_9:
     id: 9
     title: 'Interstellar'
-    type:
+    types:
       - 'Drame'
       - 'SF'
     year: 2014
@@ -90,7 +90,7 @@ Infra\Entity\Movie:
   movie_10:
     id: 10
     title: 'Il était une fois en Amérique'
-    type:
+    types:
       - 'Policier'
       - 'Drame'
     year: 1984
@@ -100,7 +100,7 @@ Infra\Entity\Movie:
   movie_11:
     id: 11
     title: ' Star Wars : Episode V - L''Empire contre-attaque  '
-    type:
+    types:
       - 'Aventure'
       - 'SF'
     year: 1980
@@ -110,7 +110,7 @@ Infra\Entity\Movie:
   movie_12:
     id: 12
     title: 'Il était une fois dans l''Ouest'
-    type:
+    types:
       - 'Western'
     year: 1969
     description: 'Un mystérieux desperado pourchasse sans relâche un dangereux criminel. '
@@ -119,7 +119,7 @@ Infra\Entity\Movie:
   movie_13:
     id: 13
     title: 'Inception'
-    type:
+    types:
       - 'Thriller'
       - 'SF'
     year: 2010
@@ -129,7 +129,7 @@ Infra\Entity\Movie:
   movie_14:
     id: 15
     title: 'Avengers: Infinity War'
-    type:
+    types:
       - 'Action'
       - 'Aventure'
     year: 2018
@@ -139,7 +139,7 @@ Infra\Entity\Movie:
   movie_15:
     id: 15
     title: 'Intouchables'
-    type:
+    types:
       - 'Comédie'
     year: 2019
     description: 'La rencontre improbable, touchante et drôle entre un riche aristocrate, tétraplégique depuis un accident de parapente, et un jeune de banlieue engagé par hasard pour être son aide à domicile...'
@@ -148,7 +148,7 @@ Infra\Entity\Movie:
   movie_16:
     id: 16
     title: 'Forrest Gump'
-    type:
+    types:
       - 'Comédie-Dramatique'
       - 'Romance'
     year: 1994
@@ -158,7 +158,7 @@ Infra\Entity\Movie:
   movie_17:
     id: 17
     title: 'A Star Is Born'
-    type:
+    types:
       - 'Drame'
       - 'Romance'
     year: 2018
@@ -168,7 +168,7 @@ Infra\Entity\Movie:
   movie_18:
     id: 18
     title: 'Titanic'
-    type:
+    types:
       - 'Drame'
       - 'Romance'
     year: 1997
@@ -178,7 +178,7 @@ Infra\Entity\Movie:
   movie_19:
     id: 19
     title: 'American Sniper'
-    type:
+    types:
       - 'Biopic'
       - 'Guerre'
       - 'Drame'
@@ -189,7 +189,7 @@ Infra\Entity\Movie:
   movie_20:
     id: 20
     title: 'Je suis une legende'
-    type:
+    types:
       - 'Action'
       - 'SF'
     year: 2007
