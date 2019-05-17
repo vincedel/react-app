@@ -23,6 +23,7 @@ import SnackbarContent from "../../components/Snackbar/SnackbarContent";
 
 import image from "./../../assets/img/bg7.jpg";
 import { login } from '../../store/actions';
+import actions from '../../store/actions';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -160,7 +161,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    login: login(dispatch)
+    login: actions.login(dispatch)
 });
 
 const container = connect(mapStateToProps, mapDispatchToProps)(LoginPage);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {logout} from "../../store/actions";
+import actions from "../../store/actions";
 import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 
@@ -17,7 +17,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    logout: logout(dispatch)
+    logout: actions.logout(dispatch)
 });
 const container = connect(mapStateToProps, mapDispatchToProps)(LogoutPage);
 

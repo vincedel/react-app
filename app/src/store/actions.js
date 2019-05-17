@@ -70,4 +70,148 @@ const logout = (dispatch) => () => {
     });
 };
 
-export { login, register, logout };
+const getMovies = (dispatch) => (s = null) => {
+    let path = '/movies';
+
+    if (s !== null) {
+        path += '?s='+s;
+    }
+
+    RequestAPI(path, 'GET')
+        .then(response => {
+            const body = response.json();
+
+            return body.then(movies => {
+                return dispatch({
+                    type: "GET_MOVIES",
+                    payload: {
+                        movies
+                    }
+                });
+            });
+        });
+};
+
+const getMovie = (dispatch) => (id) => {
+    let path = '/movies/'+id;
+
+    RequestAPI(path, 'GET')
+        .then(response => {
+            const body = response.json();
+
+            return body.then(movie => {
+                console.log(movie);
+                return dispatch({
+                    type: "GET_MOVIE",
+                    payload: {
+                        movie
+                    }
+                });
+            });
+        });
+};
+
+const changeMovieStatus = (dispatch) => (id, status, update = false) => {
+    let path = '/movies/'+id+'/status';
+
+    RequestAPI(path, update ? 'PUT' : 'POST', {liked: status})
+        .then(response => {
+            const body = response.json();
+
+            return body.then(movieStatus => {
+
+                return dispatch({
+                    type: "UPDATE_MOVIE_STATUS",
+                    payload: {
+                        movieStatus
+                    }
+                });
+            });
+        });
+};
+
+const getMovieStatus = (dispatch) => (id) => {
+    let path = '/movies/'+id+'/status';
+
+    RequestAPI(path, 'GET')
+        .then(response => {
+            const body = response.json();
+
+            return body.then(movieStatus => {
+
+                return dispatch({
+                    type: "UPDATE_MOVIE_STATUS",
+                    payload: {
+                        movieStatus
+                    }
+                });
+            });
+        });
+};
+
+const getUsers = (dispatch) => () => {
+    RequestAPI('/users', 'GET')
+        .then(response => {
+            const body = response.json();
+
+            return body.then(users => {
+
+                return dispatch({
+                    type: "GET_USERS",
+                    payload: {
+                        users
+                    }
+                });
+            });
+        });
+};
+
+const matchWithUser = (dispatch) => (id) => {
+    RequestAPI('/user_matches', 'POST', {user: id})
+        .then(response => {
+            const body = response.json();
+
+            return body.then(last_user_match => {
+
+                return dispatch({
+                    type: "MATCH_USER",
+                    payload: {
+                        last_user_match
+                    }
+                });
+            });
+        });
+};
+
+const getMatches = (dispatch) => (id) => {
+    RequestAPI('/user_matches', 'GET')
+        .then(response => {
+            const body = response.json();
+
+            return body.then(matches => {
+
+                return dispatch({
+                    type: "GET_MATCH",
+                    payload: {
+                        matches
+                    }
+                });
+            });
+        });
+};
+
+
+const actions = {
+    login: login,
+    getMovies: getMovies,
+    getMovie: getMovie,
+    changeMovieStatus: changeMovieStatus,
+    getMovieStatus: getMovieStatus,
+    getUsers: getUsers,
+    matchWithUser: matchWithUser,
+    getMatches: getMatches,
+    register: register,
+    logout: logout,
+};
+
+export default actions;

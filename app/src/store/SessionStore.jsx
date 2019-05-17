@@ -11,7 +11,28 @@ const initialState = {
         displayError: false,
         errorMessage: '',
         redirect: false
-    }
+    },
+    movies: [],
+    movie: {
+        poster: '',
+        title: '',
+        description: '',
+        types: [],
+        year: ''
+    },
+    movieStatus: {
+        movie: 0,
+        user: '',
+        liked: null
+    },
+    users: [
+        {
+            avatar: '',
+            fname: '',
+            name: ''
+        }
+    ],
+    matches: []
 };
 
 export default (state = initialState, action) => {
@@ -43,6 +64,27 @@ export default (state = initialState, action) => {
             sessionStorage.removeItem('user');
             newState.user = null;
             return newState;
+
+        case 'GET_MOVIES':
+            newState.movies = action.payload.movies;
+            return newState;
+
+        case 'GET_MOVIE':
+            newState.movie = action.payload.movie;
+            return newState;
+
+        case 'UPDATE_MOVIE_STATUS':
+            newState.movieStatus = action.payload.movieStatus;
+            return newState;
+
+        case 'GET_USERS':
+            newState.users = action.payload.users;
+            return newState;
+
+        case 'GET_MATCH':
+            newState.matches = action.payload.matches;
+            return newState;
+
         default:
             return state
     }

@@ -29,7 +29,7 @@ import registerPageStyle from "./../../assets/jss/material-kit-react/views/regis
 
 import image from "./../../assets/img/bg7.jpg";
 import CustomInputSelect from "../../components/CustomInputSelect/CustomInputSelect";
-import { register } from "../../store/actions";
+import actions  from "../../store/actions";
 import {connect} from "react-redux";
 import SnackbarContent from "../../components/Snackbar/SnackbarContent";
 import {Redirect} from "react-router-dom";
@@ -289,7 +289,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    register: register(dispatch)
+    register: actions.register(dispatch)
 });
 
 const container = connect(mapStateToProps, mapDispatchToProps)(RegisterPage);
